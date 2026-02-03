@@ -89,7 +89,7 @@
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-yellow-500 font-semibold">★★★★★</span>
-                            <a href="#" class="text-orange-600 font-semibold text-sm">
+                            <a href="{{ route('client.restaurantDetails') }}" class="text-orange-600 font-semibold text-sm">
                                 View Details →
                             </a>
                         </div>
@@ -114,7 +114,7 @@
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-yellow-500 font-semibold">★★★★☆</span>
-                            <a href="#" class="text-orange-600 font-semibold text-sm">
+                            <a href="{{ route('client.restaurantDetails') }}" class="text-orange-600 font-semibold text-sm">
                                 View Details →
                             </a>
                         </div>

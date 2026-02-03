@@ -121,27 +121,27 @@
                         <div class="hidden md:flex space-x-8 ml-12">
                             @auth
                                 @if(auth()->user()->role === 'client')
-                                    <a href="}" class="nav-link {{ request()->routeIs('client.home') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Home
                                     </a>
-                                    <a href="" class="nav-link {{ request()->routeIs('client.restaurants.*') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('client.restaurant') }}" class="nav-link {{ request()->routeIs('client.restaurant') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Restaurants
                                     </a>
-                                @elseif(auth()->user()->role === 'restaurateur')
-                                    <a href="" class="nav-link {{ request()->routeIs('restaurateur.dashboard') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                @elseif(auth()->user()->role === 'restaurant')
+                                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Dashboard
                                     </a>
-                                    <a href="" class="nav-link {{ request()->routeIs('restaurateur.restaurants.*') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('restaurateur.restaurants') }}" class="nav-link {{ request()->routeIs('restaurateur.restaurants') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         My Restaurants
                                     </a>
                                 @elseif(auth()->user()->role === 'admin')
-                                    <a href="" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Dashboard
                                     </a>
-                                    <a href="" class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('admin.users') }}" class="nav-link {{ request()->routeIs('admin.users') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Users
                                     </a>
-                                    <a href="" class="nav-link {{ request()->routeIs('admin.restaurants.*') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
+                                    <a href="{{ route('admin.restaurants') }}" class="nav-link {{ request()->routeIs('admin.restaurants') ? 'active' : '' }} text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium">
                                         Restaurants
                                     </a>
                                 @endif

@@ -208,7 +208,7 @@
         <p class="text-xl mb-10 text-white/90">
             Join thousands of food lovers discovering amazing restaurants every day
         </p>
-        <a href="" class="inline-flex items-center px-8 py-4 bg-white text-orange-600 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-200">
+        <a href="{{ route('client.restaurant') }}" class="inline-flex items-center px-8 py-4 bg-white text-orange-600 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-200">
             Explore Restaurants Now
             <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>

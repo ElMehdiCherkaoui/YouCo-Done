@@ -6,11 +6,11 @@
         <!-- Header -->
         <div class="mb-10 animate-slide-in">
             <div class="flex items-center text-sm text-gray-600 mb-4">
-                <a href="{{ route('restaurateur.dashboard') }}" class="hover:text-orange-600">Dashboard</a>
+                <a href="{{ route('dashboard') }}" class="hover:text-orange-600">Dashboard</a>
                 <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
-                <a href="{{ route('restaurateur.restaurants.index') }}" class="hover:text-orange-600">My Restaurants</a>
+                <a href="{{ route('restaurateur.restaurants') }}" class="hover:text-orange-600">My Restaurants</a>
                 <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
@@ -21,9 +21,9 @@
         </div>
 
         <!-- Form -->
-        <form action="{{ route('restaurateur.restaurants.store') }}" method="POST" enctype="multipart/form-data" class="animate-slide-in" style="animation-delay: 0.1s;">
+        <form action="" method="POST" enctype="multipart/form-data" class="animate-slide-in" style="animation-delay: 0.1s;">
             @csrf
-            @include('restaurateur.restaurants._form')
+            @include('restaurateur.form')
         </form>
 
         <!-- Tips Section -->
