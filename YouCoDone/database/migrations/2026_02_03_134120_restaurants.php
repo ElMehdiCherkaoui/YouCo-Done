@@ -14,12 +14,16 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('description');
+            $table->string('number');
+            $table->string('email');
             $table->string('image');
             $table->string('city');
             $table->string('address');
             $table->string('cuisine_type');
             $table->string('capacity');
             $table->string('opening_hours');
+            $table->boolean('isActive');
             $table->softDeletes();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
