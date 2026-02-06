@@ -11,7 +11,8 @@
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-10">
                 <form class="space-y-6" method="GET" action="{{ route('client.restaurant') }}">
-                    <input value="{{ request('search') }}" name="search" type="text" placeholder="Search by name, cuisine, or location..."
+                    <input value="{{ request('search') }}" name="search" type="text"
+                        placeholder="Search by name, cuisine, or location..."
                         class="w-full pl-4 pr-4 py-4 border border-gray-300 rounded-xl text-lg">
 
                     <button type="submit" class="px-8 py-3 bg-orange-500 text-white rounded-lg font-semibold">
@@ -83,6 +84,13 @@
                         </div>
                     </div>
                 @endforeach
+
+            </div>
+
+            <div class="mt-10 flex justify-center">
+                <div class="rounded-xl border border-gray-200 bg-white px-4 py-2 shadow-sm">
+                    {{ $restaurants->links() }}
+                </div>
             </div>
 
 

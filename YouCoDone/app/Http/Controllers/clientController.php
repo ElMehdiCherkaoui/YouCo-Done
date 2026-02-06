@@ -40,7 +40,8 @@ class clientController extends Controller
 
         $restaurants = $query
             ->orderByDesc('is_favorite')
-            ->get();
+            ->paginate(10)
+            ->withQueryString();
 
         return view('client.restaurantLists', [
             'restaurants' => $restaurants,

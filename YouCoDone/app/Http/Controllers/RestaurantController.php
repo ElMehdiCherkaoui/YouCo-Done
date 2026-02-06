@@ -6,15 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\MenuItem;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    use AuthorizesRequests;
     public function index()
     {
-        $restaurants = Restaurant::with('user')->get();
+        $userId = auth()->id();
+        $restaurants = Restaurant::with('user')->where('user_id', $userId)->paginate(10)
+            ->withQueryString();
 
         $totalRestaurants = Restaurant::count();
         $activeRestaurants = Restaurant::where('isActive', true)->count();
@@ -66,18 +71,18 @@ class RestaurantController extends Controller
     /**
      * Display the specified resource.
      */
-public function show(string $id)
-{
-    $restaurant = Restaurant::with([
-        'user',
-        'menus.menuItems'  
-    ])->findOrFail($id);
+    public function show(string $id)
+    {
+        $restaurant = Restaurant::with([
+            'user',
+            'menus.menuItems'
+        ])->findOrFail($id);
 
 
-    $allItems = MenuItem::all();
+        $allItems = MenuItem::all();
 
-    return view('restaurateur.show', compact('restaurant', 'allItems'));
-}
+        return view('restaurateur.show', compact('restaurant', 'allItems'));
+    }
 
 
 
@@ -113,6 +118,7 @@ public function show(string $id)
         ]);
 
         $validated['image'] = $request->input('image');
+        $this->authorize('update', $restaurant);
 
         $restaurant->update($validated);
 
@@ -128,6 +134,6 @@ public function show(string $id)
         $restaurant = Restaurant::findOrFail($id);
         $restaurant->delete();
 
-        return redirect()->route('restaurateur.restaurants');
+        return redirect()->back();
     }
 }

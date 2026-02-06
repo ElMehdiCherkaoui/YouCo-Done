@@ -167,7 +167,11 @@
                 @endforelse
 
             </div>
-
+            <div class="mt-10 flex justify-center">
+                <div class="rounded-xl border border-gray-200 bg-white px-4 py-2 shadow-sm">
+                    {{ $restaurants->links() }}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
