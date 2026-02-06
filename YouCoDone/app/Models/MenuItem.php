@@ -12,11 +12,10 @@ class MenuItem extends Model
     protected $fillable = [
         'title',
         'description',
-        'menu_id',
-    ];
 
-    public function menu()
+    ];
+    public function menus()
     {
-        return $this->belongsTo(Menu::class);
+        return $this->belongsToMany(Menu::class);
     }
 }
