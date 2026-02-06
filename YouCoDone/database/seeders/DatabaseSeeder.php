@@ -13,14 +13,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+
         User::factory(10)->create();
 
-        Restaurant::factory(5)
-            ->has(
-                Menu::factory(2)
-                    ->has(MenuItem::factory(4))
-            )
-            ->create();
+        Restaurant::factory(5)->has(Menu::factory(2)->hasAttached(MenuItem::factory()))>create();
 
         Favorite::factory(10)->create();
     }
