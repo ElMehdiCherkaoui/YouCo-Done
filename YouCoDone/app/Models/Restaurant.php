@@ -12,12 +12,16 @@ class Restaurant extends Model
 
     protected $fillable = [
         'name',
+        'description',
+        'number',
+        'email',
         'image',
         'city',
         'address',
         'cuisine_type',
         'capacity',
         'opening_hours',
+        'isActive',
         'user_id',
     ];
 
@@ -34,5 +38,13 @@ class Restaurant extends Model
     public function favorites()
     {
         return $this->hasMany(Favorite::class);
+    }
+    public function favoritedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
+    }
+    public function isFavoritedBy($userId)
+    {
+        return $this->favoritedByUsers()->where('user_id', $userId)->exists();
     }
 }
