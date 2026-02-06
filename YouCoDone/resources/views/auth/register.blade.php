@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,28 +11,34 @@
         .gradient-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+
         .btn-hover {
             transition: all 0.2s ease;
         }
+
         .btn-hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .animate-fade-in {
             animation: fadeIn 0.3s ease-in-out;
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-purple-50 via-white to-pink-50">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="w-full max-w-2xl">
@@ -74,7 +81,9 @@
                                 <input type="text" id="name" name="name" value="{{ old('name') }}" required
                                     class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition"
                                     placeholder="John Doe">
-                                @error('name')<p class="text-red-600 text-sm mt-2">{{ $message }}</p>@enderror
+                                @error('name')
+                                    <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <!-- Email -->
@@ -85,7 +94,9 @@
                                 <input type="email" id="email" name="email" value="{{ old('email') }}" required
                                     class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition"
                                     placeholder="john@example.com">
-                                @error('email')<p class="text-red-600 text-sm mt-2">{{ $message }}</p>@enderror
+                                @error('email')
+                                    <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <!-- Phone -->
@@ -108,7 +119,8 @@
                                     placeholder="Paris">
                             </div>
 
-                            <button type="button" onclick="nextStep(1)" class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition btn-hover">
+                            <button type="button" onclick="nextStep(1)"
+                                class="w-full bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition btn-hover">
                                 Continue <i class="fas fa-arrow-right ml-2"></i>
                             </button>
                         </div>
@@ -119,7 +131,8 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                                 <!-- Client Card -->
-                                <div class="role-card p-8 rounded-2xl border-2 border-gray-300 cursor-pointer transition-smooth hover:border-blue-500 hover:shadow-lg" onclick="selectRole('client', this)">
+                                <div class="role-card p-8 rounded-2xl border-2 border-gray-300 cursor-pointer transition-smooth hover:border-blue-500 hover:shadow-lg"
+                                    onclick="selectRole('client', this)">
                                     <div class="text-center mb-4">
                                         <div class="text-6xl text-blue-500 mb-4">
                                             <i class="fas fa-user"></i>
@@ -142,7 +155,8 @@
                                 </div>
 
                                 <!-- Restaurant Card -->
-                                <div class="role-card p-8 rounded-2xl border-2 border-gray-300 cursor-pointer transition-smooth hover:border-orange-500 hover:shadow-lg" onclick="selectRole('restaurant', this)">
+                                <div class="role-card p-8 rounded-2xl border-2 border-gray-300 cursor-pointer transition-smooth hover:border-orange-500 hover:shadow-lg"
+                                    onclick="selectRole('restaurant', this)">
                                     <div class="text-center mb-4">
                                         <div class="text-6xl text-orange-500 mb-4">
                                             <i class="fas fa-store"></i>
@@ -166,10 +180,12 @@
                             </div>
 
                             <div class="flex space-x-4">
-                                <button type="button" onclick="prevStep(2)" class="flex-1 border-2 border-gray-300 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition">
+                                <button type="button" onclick="prevStep(2)"
+                                    class="flex-1 border-2 border-gray-300 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition">
                                     <i class="fas fa-arrow-left mr-2"></i>Back
                                 </button>
-                                <button type="button" onclick="nextStep(2)" class="flex-1 bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition btn-hover">
+                                <button type="button" onclick="nextStep(2)"
+                                    class="flex-1 bg-purple-600 text-white font-bold py-3 rounded-lg hover:bg-purple-700 transition btn-hover">
                                     Continue <i class="fas fa-arrow-right ml-2"></i>
                                 </button>
                             </div>
@@ -187,9 +203,9 @@
                                 <div class="relative">
                                     <input type="password" id="password" name="password" required
                                         class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition"
-                                        placeholder="Minimum 8 characters"
-                                        oninput="checkPasswordStrength()">
-                                    <button type="button" onclick="togglePasswordVisibility()" class="absolute right-4 top-3 text-gray-500 hover:text-gray-700">
+                                        placeholder="Minimum 8 characters" oninput="checkPasswordStrength()">
+                                    <button type="button" onclick="togglePasswordVisibility()"
+                                        class="absolute right-4 top-3 text-gray-500 hover:text-gray-700">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
@@ -198,13 +214,22 @@
                                 <div class="mt-3">
                                     <div class="flex items-center justify-between mb-2">
                                         <label class="text-sm font-medium text-gray-700">Password Strength:</label>
-                                        <span id="strengthText" class="text-sm font-semibold text-gray-600">Very Weak</span>
+                                        <span id="strengthText" class="text-sm font-semibold text-gray-600">Very
+                                            Weak</span>
                                     </div>
                                     <div class="flex space-x-2">
-                                        <div id="strength1" class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300"></div>
-                                        <div id="strength2" class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300"></div>
-                                        <div id="strength3" class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300"></div>
-                                        <div id="strength4" class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300"></div>
+                                        <div id="strength1"
+                                            class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300">
+                                        </div>
+                                        <div id="strength2"
+                                            class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300">
+                                        </div>
+                                        <div id="strength3"
+                                            class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300">
+                                        </div>
+                                        <div id="strength4"
+                                            class="h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -226,7 +251,9 @@
                                         <i class="fas fa-circle text-gray-300 mr-2"></i>One special character (!@#$%)
                                     </p>
                                 </div>
-                                @error('password')<p class="text-red-600 text-sm mt-2">{{ $message }}</p>@enderror
+                                @error('password')
+                                    <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <!-- Confirm Password -->
@@ -235,34 +262,43 @@
                                     <i class="fas fa-lock text-purple-600 mr-2"></i>Confirm Password
                                 </label>
                                 <div class="relative">
-                                    <input type="password" id="password_confirmation" name="password_confirmation" required
+                                    <input type="password" id="password_confirmation" name="password_confirmation"
+                                        required
                                         class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-600 focus:outline-none transition"
-                                        placeholder="Confirm your password"
-                                        oninput="checkPasswordMatch()">
-                                    <button type="button" onclick="toggleConfirmPasswordVisibility()" class="absolute right-4 top-3 text-gray-500 hover:text-gray-700">
+                                        placeholder="Confirm your password" oninput="checkPasswordMatch()">
+                                    <button type="button" onclick="toggleConfirmPasswordVisibility()"
+                                        class="absolute right-4 top-3 text-gray-500 hover:text-gray-700">
                                         <i class="fas fa-eye"></i>
                                     </button>
                                 </div>
                                 <p id="matchText" class="mt-2 text-sm text-gray-600"></p>
-                                @error('password_confirmation')<p class="text-red-600 text-sm mt-2">{{ $message }}</p>@enderror
+                                @error('password_confirmation')
+                                    <p class="text-red-600 text-sm mt-2">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <!-- Checkbox -->
                             <div class="mb-6">
                                 <label class="flex items-center">
-                                    <input type="checkbox" name="agree" required class="w-5 h-5 rounded border-gray-300 text-purple-600 focus:ring-purple-600">
+                                    <input type="checkbox" name="agree" required
+                                        class="w-5 h-5 rounded border-gray-300 text-purple-600 focus:ring-purple-600">
                                     <span class="ml-2 text-gray-700">
-                                        I agree to the <a href="#" class="text-purple-600 hover:underline">Terms of Service</a> 
-                                        and <a href="#" class="text-purple-600 hover:underline">Privacy Policy</a>
+                                        I agree to the <a href="#" class="text-purple-600 hover:underline">Terms
+                                            of Service</a>
+                                        and <a href="#" class="text-purple-600 hover:underline">Privacy
+                                            Policy</a>
                                     </span>
                                 </label>
                             </div>
 
                             <div class="flex space-x-4">
-                                <button type="button" onclick="prevStep(3)" class="flex-1 border-2 border-gray-300 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition">
+                                <button type="button" onclick="prevStep(3)"
+                                    class="flex-1 border-2 border-gray-300 text-gray-700 font-bold py-3 rounded-lg hover:bg-gray-50 transition">
                                     <i class="fas fa-arrow-left mr-2"></i>Back
                                 </button>
-                                <button type="submit" id="submitBtn" disabled class="flex-1 bg-gray-400 text-white font-bold py-3 rounded-lg cursor-not-allowed transition" onclick="return validateForm()">
+                                <button type="submit" id="submitBtn" disabled
+                                    class="flex-1 bg-gray-400 text-white font-bold py-3 rounded-lg cursor-not-allowed transition"
+                                    onclick="return validateForm()">
                                     Create Account <i class="fas fa-check ml-2"></i>
                                 </button>
                             </div>
@@ -271,11 +307,17 @@
                         <!-- Progress Bar -->
                         <div class="mt-8 pt-6 border-t border-gray-200">
                             <div class="flex items-center justify-center space-x-4">
-                                <div id="prog1" class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold">1</div>
+                                <div id="prog1"
+                                    class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold">
+                                    1</div>
                                 <div class="w-12 h-1 bg-gray-300"></div>
-                                <div id="prog2" class="w-12 h-12 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">2</div>
+                                <div id="prog2"
+                                    class="w-12 h-12 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">
+                                    2</div>
                                 <div class="w-12 h-1 bg-gray-300"></div>
-                                <div id="prog3" class="w-12 h-12 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">3</div>
+                                <div id="prog3"
+                                    class="w-12 h-12 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">
+                                    3</div>
                             </div>
                         </div>
                     </form>
@@ -283,8 +325,9 @@
                     <!-- Login Link -->
                     <div class="mt-8 text-center border-t border-gray-200 pt-6">
                         <p class="text-gray-600">
-                            Already have an account? 
-                            <a href="{{ route('login') }}" class="text-purple-600 font-bold hover:underline">Sign in</a>
+                            Already have an account?
+                            <a href="{{ route('login') }}" class="text-purple-600 font-bold hover:underline">Sign
+                                in</a>
                         </p>
                     </div>
                 </div>
@@ -297,7 +340,7 @@
 
         function nextStep(step) {
             if (step === 1) {
-                if (!document.querySelector('input[name="name"]').value || 
+                if (!document.querySelector('input[name="name"]').value ||
                     !document.querySelector('input[name="email"]').value) {
                     alert('Please fill all required fields');
                     return;
@@ -376,7 +419,7 @@
             const strengthBars = ['strength1', 'strength2', 'strength3', 'strength4'];
             const strengthText = document.getElementById('strengthText');
             const colors = ['red', 'yellow', 'blue', 'green'];
-            const texts = ['Very Weak', 'Weak', 'Medium', 'Strong'];
+            const texts = ['Very Weak', 'Weak', 'Medium', 'Strong', 'Strongest'];
 
             let strength = 0;
 
@@ -401,14 +444,16 @@
             strengthBars.forEach((bar, i) => {
                 const el = document.getElementById(bar);
                 if (i < strength) {
-                    el.className = `h-2 flex-1 bg-${colors[strength - 1]}-500 rounded-full transition-colors duration-300`;
+                    el.className =
+                        `h-2 flex-1 bg-${colors[strength - 1]}-500 rounded-full transition-colors duration-300`;
                 } else {
                     el.className = 'h-2 flex-1 bg-gray-300 rounded-full transition-colors duration-300';
                 }
             });
 
             strengthText.textContent = texts[strength] || texts[0];
-            strengthText.className = strength >= 3 ? 'text-sm font-semibold text-green-600' : 'text-sm font-semibold text-red-600';
+            strengthText.className = strength >= 3 ? 'text-sm font-semibold text-green-600' :
+                'text-sm font-semibold text-red-600';
 
             checkPasswordMatch();
             updateSubmitButton();
@@ -454,15 +499,16 @@
             let strength = 0;
 
             Array.from(strengthBars).forEach(bar => {
-                if (bar.classList.contains('bg-red-500') || 
-                    bar.classList.contains('bg-yellow-500') || 
-                    bar.classList.contains('bg-blue-500') || 
+                if (bar.classList.contains('bg-red-500') ||
+                    bar.classList.contains('bg-yellow-500') ||
+                    bar.classList.contains('bg-blue-500') ||
                     bar.classList.contains('bg-green-500')) {
                     strength++;
                 }
             });
 
-            if (password && confirm && password === confirm && strength >= 3 && document.querySelector('input[name="agree"]').checked) {
+            if (password && confirm && password === confirm && strength >= 3 && document.querySelector(
+                    'input[name="agree"]').checked) {
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
                 submitBtn.classList.add('bg-purple-600', 'hover:bg-purple-700', 'cursor-pointer');
@@ -486,4 +532,5 @@
         document.querySelector('input[name="agree"]').addEventListener('change', updateSubmitButton);
     </script>
 </body>
+
 </html>

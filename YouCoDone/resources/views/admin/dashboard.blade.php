@@ -3,13 +3,11 @@
 @section('content')
     <div class="min-h-screen bg-gray-50 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
             <div class="mb-10 animate-slide-in">
                 <h1 class="text-5xl font-display font-bold text-gray-900 mb-3">Admin Dashboard</h1>
                 <p class="text-xl text-gray-600">Platform overview and management</p>
             </div>
 
-            <!-- Stats Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
                 <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 animate-slide-in"
                     style="animation-delay: 0.05s;">
@@ -86,11 +84,8 @@
                 </div>
             </div>
 
-            <!-- Main Content Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Left Column -->
                 <div class="lg:col-span-2 space-y-8">
-                    <!-- Recent Activity -->
                     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 animate-slide-in"
                         style="animation-delay: 0.25s;">
                         <h2 class="text-2xl font-display font-bold text-gray-900 mb-6">Recent Activity</h2>
