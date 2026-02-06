@@ -11,7 +11,8 @@ class AdminRestaurantController extends Controller
 
     public function index()
     {
-        $restaurants = Restaurant::with('user')->get();
+        $restaurants = Restaurant::with('user')->paginate(10)
+            ->withQueryString();
 
         $totalRestaurants = Restaurant::count();
         $activeRestaurants = Restaurant::where('isActive', true)->count();
